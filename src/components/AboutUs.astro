@@ -1,0 +1,39 @@
+---
+export interface AboutUsProps {
+  title: string;
+  content1: string;
+  content2: string;
+  image: string;
+  responsiveImage: string;
+}
+const { title, content1, content2, image, responsiveImage } = Astro.props;
+---
+
+<section id="about-us" class="text-black mx-6 xl:mx-32 h-max pt-20">
+  <h1 class="text-4xl text-blue-footer font-semibold text-center">{title}</h1>
+  <div class="flex items-center max-lg:flex-col my-14">
+    <img
+      class=""
+      src={image}
+      alt={`Image of ${title}`}
+      width="600"
+      height="200"
+    />
+
+    <div class="mx-8">
+      <p class="mt-6">
+        {content1}
+        <br />
+        <br />
+        {content2}
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  img {
+    /* width: 26rem;
+    height: 20rem; */
+    border-radius: 20px;
+  }
+</style>

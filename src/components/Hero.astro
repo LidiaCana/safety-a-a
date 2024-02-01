@@ -1,0 +1,73 @@
+---
+import Nav from "./Nav.astro";
+import Icon from "./Icon.astro";
+import Carrusel from "./Carrusel.astro";
+
+const images = [
+  {
+    href: "/assets/safety/carrusel/image1.png",
+    title: "carousel-1",
+    body: null,
+  },
+  {
+    href: "src/assets/safety/carrusel/image2.jpeg",
+    title: "carousel-2",
+    body: null,
+  },
+  {
+    href: "src/assets/safety/carrusel/image3.png",
+    title: "carousel-3",
+    body: null,
+  },
+  {
+    href: "src/assets/safety/carrusel/image4.jpg",
+    title: "carousel-4",
+    body: null,
+  },
+];
+---
+
+<section class="flex flex-col">
+  <Nav />
+  <Carrusel content={images} />
+</section>
+
+<style>
+  .learn-more {
+    background: linear-gradient(to right, #244663, #081016);
+  }
+
+  .h-custom {
+    height: 100vh;
+  }
+
+  .mt-custom {
+    margin-top: 13rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    section {
+    }
+  }
+
+  @media screen and (min-height: 1000px) {
+    .h-custom {
+      height: 80vh;
+    }
+    section {
+      background-position: top right;
+    }
+  }
+
+  @media screen and (min-height: 1000px) and (min-width: 1000px) {
+    section {
+      background-position: top right;
+    }
+  }
+
+  @media screen and (max-height: 580px) {
+    .mt-custom {
+      margin-top: 2rem;
+    }
+  }
+</style>

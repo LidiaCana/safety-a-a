@@ -1,0 +1,179 @@
+---
+import Icon from "./Icon.astro";
+interface item {
+  href: string;
+  title: string;
+  body?: any;
+}
+export interface Props {
+  content: item[];
+}
+
+const { content } = Astro.props;
+---
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <!-- Items -->
+    {
+      content.map((item, index) => (
+        <div class="hidden duration-700 ease-in-out h-700" data-carousel-item>
+          <img
+            src={item.href}
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt={item.title}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <!-- Slider indicators -->
+  <div
+    class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+  >
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="true"
+      aria-label="Slide 1"
+      data-carousel-slide-to="0"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 2"
+      data-carousel-slide-to="1"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 3"
+      data-carousel-slide-to="2"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 4"
+      data-carousel-slide-to="3"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 5"
+      data-carousel-slide-to="4"></button>
+  </div>
+  <!-- Slider controls -->
+  <button
+    type="button"
+    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-prev
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 1 1 5l4 4"></path>
+      </svg>
+      <span class="sr-only">Previous</span>
+    </span>
+  </button>
+  <button
+    type="button"
+    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-next
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 9 4-4-4-4"></path>
+      </svg>
+      <span class="sr-only">Next</span>
+    </span>
+  </button>
+</div>
+
+<script>
+  const nextButtons = document.querySelectorAll("button.next");
+  const prevButtons = document.querySelectorAll("button.prev");
+
+  nextButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      next();
+    });
+  });
+
+  prevButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      prev();
+    });
+  });
+
+  function next() {
+    const next = document.getElementById("next");
+    next ? next.click() : null;
+  }
+
+  function prev() {
+    const prev = document.getElementById("prev");
+    prev ? prev.click() : null;
+  }
+</script>
+
+<style>
+  .bkgnd {
+    background: linear-gradient(to right, #244663, #081016);
+  }
+  .white-round1,
+  .white-round2 {
+    width: 100%;
+    height: 5rem;
+    background-color: #f3f3f3;
+    position: absolute;
+  }
+  .white-round1 {
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    top: 4.8rem;
+    z-index: 1;
+  }
+  .white-round2 {
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    bottom: 4.8rem;
+  }
+  .height {
+    height: 1200px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .sm-img {
+      width: 250px;
+      height: auto;
+      margin-bottom: -200px;
+    }
+  }
+</style>
