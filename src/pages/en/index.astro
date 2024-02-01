@@ -4,6 +4,8 @@ import Hero from "../../components/Hero.astro";
 import AboutUs from "../../components/AboutUs.astro";
 import Card from "../../components/Card.astro";
 import CircleIcon from "../../components/CircleIcon.astro";
+import ContactUs from "../../components/ContactUs.astro";
+import Footer from "../../components/Footer.astro";
 const courses = [
   {
     title: "OSHA",
@@ -54,7 +56,7 @@ const courses = [
   <Hero />
   <AboutUs
     title="About Us"
-    image="src/assets/safety/safety1.jpeg"
+    image="https://iili.io/JlTVDGa.jpg"
     responsiveImage=""
     content1="AA Safety Resources is a trusted and experienced company with over 15 years of expertise in providing top-notch bilingual safety training and consulting services. Our commitment to workplace safety is unwavering, and we take pride in delivering comprehensive training programs and professional consulting services to our clients. At A&A Safety Resources, we understand the importance of a safe work environment. That is why our team of highly skilled trainers and consultants are equipped with the knowledge and experience to address the unique safety challenges faced by businesses across various industries. Our bilingual approach sets us apart, as we strive to bridge language barriers and ensure that all employees have access to vital safety information. Whether it is conducting training sessions or developing customized safety plans, we are dedicated to empowering organizations with the tools they need to create a culture of safety."
     content2="With AA Safety Resources by your side, you can rest assured that your workforce will receive top-quality training tailored to their specific needs. Our comprehensive programs cover a wide range of topics, including hazard identification, emergency preparedness, workplace ergonomics, and more. Additionally, our professional consulting services provide invaluable guidance in developing effective safety policies and procedures. We work closely with our clients to assess their unique needs and implement practical solutions that align with industry standards. When it comes to workplace safety, trust the experience and expertise of A&A Safety Resources. Contact us today to learn how we can help you create a safer work environment for your organization."
@@ -85,6 +87,7 @@ const courses = [
       <CircleIcon icon="Services3" title="Interpreting Services" />
     </div>
   </section>
-
+  <ContactUs />
+  <Footer />
   <style></style>
 </BaseLayout>
