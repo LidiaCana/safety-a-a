@@ -1,0 +1,20 @@
+---
+import type { Prop as CardProps } from "./course/Card.astro";
+import Carousel from "./CarouselCustom/Carousel.astro";
+
+interface Props {
+  title: string;
+  subTitle: string;
+  items: CardProps[];
+}
+
+const { title, subTitle, items } = Astro.props;
+---
+
+<h1 class="text-4xl text-blue-footer font-semibold text-center">{title}</h1>
+<br />
+<p class="text-center text-xl text-main tracking-wider">
+  {subTitle}
+</p>
+<br />
+<Carousel items={items} />

@@ -1,0 +1,60 @@
+---
+export interface Prop {
+  title: string;
+  topSubtitle: string;
+  bottomSubtitle: string;
+  description: string;
+  image: string;
+}
+const { title, topSubtitle, bottomSubtitle, description, image } = Astro.props;
+---
+
+<div
+  class="relative course-card bg-no-repeat bg-cover bg-center bg-[url('https://iili.io/JlTWaFj.png')] rounded-card w-[38vw] h-[50vh] p-0"
+  id=`card-${title}`
+>
+  <!-- <div class="bg-transparent relative w-full h-full p-0 m-0"> -->
+  <div
+    class="bg-main absolute bottom-0 w-[72%] h-[48%] m-0 rounded-bl-card rounded-tr-card flex flex items-center justify-center content-center course-card-title"
+    id=`title-${title}`
+  >
+    <div class="space-y-2 justify-items-start">
+      <h3 class="text-slate-300">{topSubtitle}</h3>
+      <h1 class="text-white text-2xl">{title}</h1>
+      <h3 class="text-secondary">{bottomSubtitle}</h3>
+    </div>
+  </div>
+  <!-- TODO: When the mouse is over change to a simple description -->
+  <p class="hidden">
+    {description}
+  </p>
+  <!-- </div> -->
+</div>
+<script define:vars={{ title }}>
+  const card = document.getElementById("card-" + title);
+  const titleContainer = document.getElementById("title-" + title);
+  card.addEventListener("mouseover", () => {
+    titleContainer.classList.add("hovered");
+  });
+  card.addEventListener("mouseleave", () => {
+    titleContainer.classList.remove("hovered");
+  });
+</script>
+<style>
+  @media screen and (max-width: 600px) {
+    .course-card {
+      border-radius: 50px;
+      aspect-ratio: 400 / 480;
+    }
+    .course-card-title {
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 0%;
+      width: 100%;
+      height: 80%;
+    }
+  }
+  .hovered {
+    width: 30vw;
+    height: 30vh;
+  }
+</style>

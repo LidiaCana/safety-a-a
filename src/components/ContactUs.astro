@@ -1,109 +1,165 @@
 ---
 import Icon from "./Icon.astro";
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
 ---
 
-<section id="contact" class="text-white h-max xl:h-screen">
-  <div class="flex items-start h-full py-20 px-6 xl:px-40">
-    <div class="flex flex-col w-full gap-6">
-      <div class="text-black xl:px-10 py-6 w-full">
-        <h1 class="text-40 mb-8 font-semibold text-blue-footer text-center">
-          Contact Us
-        </h1>
-        <p class="mb-8 text-xl font-semibold text-blue-footer">
-          Your privacy is important to us. We will not share or publicize the
-          information you provide when you contact us. We use your data solely
-          to respond to your inquiries.
-        </p>
+<!--
+<div class="flex items-start h-full py-20 px-6 xl:px-40">
+  <div class="flex flex-col w-full gap-6">
+    <div class="text-black xl:px-10 py-6 w-full">
+      <h1 class="text-40 mb-8 font-semibold text-main text-center">
+        {title}
+      </h1>
+      <p class="mb-8 text-xl font-semibold text-main">
+        {subtitle}
+      </p>
 
-        <div class="space-y-8">
-          <div class="flex flex-wrap xl:flex-nowrap gap-8">
-            <div class="w-full">
-              <label
-                for="firstName"
-                class="block mb-2 text-sm font-semibold text-blue-footer"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="firstName"
-                data-first-name
-                name="firstName"
-                class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
-                required
-              />
-            </div>
-            <div class="w-full">
-              <label
-                for="lastName"
-                class="block mb-2 text-sm font-semibold text-blue-footer"
-                >Last Name</label
-              >
-              <input
-                type="text"
-                id="lastName"
-                data-lastname
-                name="lastName"
-                class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
-                required
-              />
-            </div>
-          </div>
-          <div class="flex flex-wrap xl:flex-nowrap gap-8">
-            <div class="w-full">
-              <label
-                for="Email"
-                class="block mb-2 text-sm font-semibold text-blue-footer"
-                >Email</label
-              >
-              <input
-                type="email"
-                data-email
-                id="Email"
-                name="email"
-                class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
-                required
-              />
-            </div>
-            <div class="w-full">
-              <label
-                for="phoneNumber"
-                class="block mb-2 text-sm font-semibold text-blue-footer"
-                >Phone Number</label
-              >
-              <input
-                type="number"
-                data-phone
-                id="phoneNumber"
-                name="phoneNumber"
-                class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
-                placeholder="555-5555-5555"
-                required
-              />
-            </div>
-          </div>
-          <div class="sm:col-span-2">
+      <div class="space-y-8">
+        <div class="flex flex-wrap xl:flex-nowrap gap-8">
+          <div class="w-full">
             <label
-              for="message"
+              for="firstName"
               class="block mb-2 text-sm font-semibold text-blue-footer"
-              >Description</label
+              >Name</label
             >
-            <textarea
-              id="message"
-              data-msj
-              name="message"
-              rows="6"
-              class="block p-2.5 w-full text-sm text-black bg-white rounded-lg shadow-sm border border-gray-300"
-            >
-            </textarea>
+            <input
+              type="text"
+              id="firstName"
+              data-first-name
+              name="firstName"
+              class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
+              required
+            />
           </div>
-          <button
-            data-send-button
-            class="flex gap-2 items-center text-white bg-gradient-to-tl from-[#081016] to-[#244663] hover:bg-rust-button-hover font-medium rounded-lg text-base px-4 py-2.5 mr-2 mb-2"
-            >Send
-            <Icon icon="arrow-right" />
-          </button>
+          <div class="w-full">
+            <label
+              for="lastName"
+              class="block mb-2 text-sm font-semibold text-blue-footer"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="lastName"
+              data-lastname
+              name="lastName"
+              class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
+              required
+            />
+          </div>
         </div>
+        <div class="flex flex-wrap xl:flex-nowrap gap-8">
+          <div class="w-full">
+            <label
+              for="Email"
+              class="block mb-2 text-sm font-semibold text-blue-footer"
+              >Email</label
+            >
+            <input
+              type="email"
+              data-email
+              id="Email"
+              name="email"
+              class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="w-full">
+            <label
+              for="phoneNumber"
+              class="block mb-2 text-sm font-semibold text-blue-footer"
+              >Phone Number</label
+            >
+            <input
+              type="number"
+              data-phone
+              id="phoneNumber"
+              name="phoneNumber"
+              class="shadow-sm bg-white border-2 border-[#CBD2E0] text-black text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
+              placeholder="555-5555-5555"
+              required
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label
+            for="message"
+            class="block mb-2 text-sm font-semibold text-blue-footer"
+            >Description</label
+          >
+          <textarea
+            id="message"
+            data-msj
+            name="message"
+            rows="6"
+            class="block p-2.5 w-full text-sm text-black bg-white rounded-lg shadow-sm border border-gray-300"
+          >
+          </textarea>
+        </div>
+        <button
+          data-send-button
+          class="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full border border-main px-5 py-3 text-main transition hover:bg-main hover:text-white md:mt-0"
+          >Send
+          <Icon icon="arrow-right" />
+        </button>
       </div>
     </div>
   </div>
-</section>
+</div> --><!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+  <div class="mx-auto max-w-lg text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">{title}</h1>
+
+    <p class="mt-4 text-main">
+      {subtitle}
+    </p>
+  </div>
+
+  <form action="#" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+    <!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+    <div>
+      <label for="OrderNotes" class="block text-sm font-medium text-gray-700">
+        Message
+      </label>
+
+      <textarea
+        id="OrderNotes"
+        class="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+        rows="4"
+        placeholder="Enter any additional order notes..."></textarea>
+    </div>
+    <br />
+    <div>
+      <button
+        type="submit"
+        class="w-full mt-6 inline-flex justify-center items-center gap-2 rounded-full border border-main px-5 py-3 text-main text-center transition hover:bg-main hover:text-white md:mt-0"
+      >
+        Send
+      </button>
+    </div>
+
+    <div class="flex items-center justify-between"></div>
+  </form>
+</div>
+
+<div class="relative h-[20vh] w-full sm:h-96 lg:h-full lg:w-1/2">
+  <img
+    alt=""
+    src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+</div>

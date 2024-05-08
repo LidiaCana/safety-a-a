@@ -12,11 +12,15 @@ module.exports = {
         "rust-button": "#874519",
         "rust-button-hover": "#804117",
         "dark-green": "#162320",
-        "blue-footer": "#325A7D",
+        "blue-footer": "#272e3f",
         white: "#fff",
         main: "#10172A",
         secondary: "#40B548",
         "secondary-dark": "#39a240",
+      },
+      backgroundImage: {
+        "course-1": "url('https://iili.io/JlTWaFj.png')",
+        "footer-texture": "url('/img/footer-texture.png')",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -29,6 +33,9 @@ module.exports = {
       },
       backgroundImage: {
         "hero-bg": "url('Hero.png')",
+      },
+      borderRadius: {
+        card: "95px",
       },
     },
     plugins: [require("flowbite/plugin")],

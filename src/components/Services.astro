@@ -1,0 +1,23 @@
+---
+import CircleIcon from "./CircleIcon.astro";
+interface Props {
+  title: string;
+  services: string[];
+}
+
+const { title, services } = Astro.props;
+---
+
+<h1 class="text-4xl text-white font-semibold text-center pb-20">
+  {title}
+</h1>
+<div class="justify-center space-x-20">
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-5 lg:gap-8">
+    <CircleIcon icon="Services2" title={services[0]} />
+    <CircleIcon icon="Services3" title={services[1]} />
+    <CircleIcon icon="Services1" title={services[2]} />
+    <CircleIcon icon="Services2" title={services[3]} />
+    <CircleIcon icon="Services3" title={services[4]} />
+  </div>
+</div>
+<br />
