@@ -7,86 +7,34 @@ import AllCourse from "../../components/AllCourse.astro";
 import ContactUs from "../../components/ContactUs.astro";
 import Footer from "../../components/Footer.astro";
 import OSHA from "../../components/OSHA.astro";
-import { OSHA_COURSES_EN } from "../../constants.astro";
 import Services from "../../components/Services.astro";
 import Announcement from "../../components/Announcement.astro";
-
-const OSHA_SUBTITLE =
-  "Learn from experienced instructors who are knowledgeable in safety regulations and best practices.";
-const OSHA_TILTE = "OSHA";
-const ABOUT_TITLE = "ABOUT US";
-const ABOUT_CONT_1 =
-  "AA Safety Resources is a trusted and experienced company with over 15 years of expertise in providing top-notch bilingual safety training and consulting services. Our commitment to workplace safety is unwavering, and we take pride in delivering comprehensive training programs and professional consulting services to our clients. At A&A Safety Resources, we understand the importance of a safe work environment. That is why our team of highly skilled trainers and consultants are equipped with the knowledge and experience to address the unique safety challenges faced by businesses across various industries. Our bilingual approach sets us apart, as we strive to bridge language barriers and ensure that all employees have access to vital safety information. Whether it is conducting training sessions or developing customized safety plans, we are dedicated to empowering organizations with the tools they need to create a culture of safety.";
-const ABOUT_CONT_2 =
-  "With AA Safety Resources by your side, you can rest assured that your workforce will receive top-quality training tailored to their specific needs. Our comprehensive programs cover a wide range of topics, including hazard identification, emergency preparedness, workplace ergonomics, and more. Additionally, our professional consulting services provide invaluable guidance in developing effective safety policies and procedures. We work closely with our clients to assess their unique needs and implement practical solutions that align with industry standards. When it comes to workplace safety, trust the experience and expertise of A&A Safety Resources. Contact us today to learn how we can help you create a safer work environment for your organization.";
-const SERVICES = [
-  "Safety Audits",
-  "Safety Training",
-  "Staffing",
-  "Translation Services",
-  "Interpreting Services",
-];
-const SERVICES_TITLE = "SERVICES";
-const ALL_TITLE = "ALL COURSES";
-const ALL_SUBTITLE =
-  "Dedicated safety professional with a passion for promoting workplace safety in the industry and construction sectors. Seeking to leverage extensive experience and expertise in safety training to educate and empower organizations in creating safer work environments.";
-const ALL_COURSES = [
-  {
-    title: "Fork Lift Operator",
-    subtitle1: "15 Hrs",
-    subtitle2: "$180 / Per Person",
-  },
-  {
-    title: "Fork Lift Operator",
-    subtitle1: "15 Hrs",
-    subtitle2: "$180 / Per Person",
-  },
-  {
-    title: "Fork Lift Operator",
-    subtitle1: "15 Hrs",
-    subtitle2: "$180 / Per Person",
-  },
-  {
-    title: "Fork Lift Operator",
-    subtitle1: "15 Hrs",
-    subtitle2: "$180 / Per Person",
-  },
-];
-const BUTTON_TXT_ALL = "GROUP PROMOTION";
-const TESTIMONIALS_TITLE = "Read trusted reviews from our customers";
-const TESTIMONIALS_SUBTITLE =
-  "Testimonials from our valued customers highlight the effectiveness and impact of our safety training programs in various industries.";
-const TESTIMONIALS_ITEMS = [
-  {
-    title: "Company Name",
-    description:
-      "After implementing safety training from [Your Company Name], we saw a remarkable decrease in workplace accidents. Our employees now have a better understanding of safety protocols, resulting in a safer work environment and increased productivity.",
-    footerText: "Person Name",
-  },
-  {
-    title: "Company Name",
-    description:
-      "After implementing safety training from [Your Company Name], we saw a remarkable decrease in workplace accidents. Our employees now have a better understanding of safety protocols, resulting in a safer work environment and increased productivity.",
-    footerText: "Person Name",
-  },
-  {
-    title: "Company Name",
-    description:
-      "After implementing safety training from [Your Company Name], we saw a remarkable decrease in workplace accidents. Our employees now have a better understanding of safety protocols, resulting in a safer work environment and increased productivity.",
-    footerText: "Person Name",
-  },
-];
-const CONTACT_US_TITLE = " CONTACT US";
-const CONTACT_US_SUBTITLE =
-  " Your privacy is important to us. We will not share or publicize the information you provide when you contact us. We use your data solely to respond to your inquiries.";
-const FOOTER_TEXT = "Safety is First";
-const SLOGAN =
-  "Safety is our unwavering commitment to ensure every worker returns home unharmed, every structure stands strong, and every project reflects the highest standards of care and diligence.";
+import {
+  TESTIMONIALS_ITEMS,
+  ALL_COURSES,
+  OSHA_COURSES_EN,
+  BTN_TXT_HERO,
+  ABOUT_CONT_1,
+  ABOUT_CONT_2,
+  ABOUT_TITLE,
+  ALL_SUBTITLE,
+  ALL_TITLE,
+  BUTTON_TXT_ALL,
+  CONTACT_US_SUBTITLE,
+  CONTACT_US_TITLE,
+  OSHA_SUBTITLE,
+  OSHA_TILTE,
+  SERVICES,
+  SERVICES_TITLE,
+  SLUG,
+  TESTIMONIALS_SUBTITLE,
+  TESTIMONIALS_TITLE,
+} from "../../translate/en.astro";
 ---
 
 <BaseLayout title="Safety a&a">
   <Announcement />
-  <Hero />
+  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} />
   <section id="about-us" class="text-black mx-6 xl:mx-32 h-max pt-14">
     <AboutUs
       title={ABOUT_TITLE}
