@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://lidiacana.github.io",
-  base: "/safety-a-a/esp",
+  base: "/safety-a-a",
   integrations: [tailwind()],
 });
