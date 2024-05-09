@@ -3,6 +3,11 @@ import Nav from "./Nav.astro";
 import Icon from "./Icon.astro";
 import Carrusel from "./Carrusel.astro";
 
+interface Props {
+  btnTxt: string;
+  slug: string;
+}
+
 const images = [
   {
     href: "https://iili.io/JlTWaFj.png",
@@ -25,14 +30,15 @@ const images = [
     body: null,
   },
 ];
+const { btnTxt, slug } = Astro.props;
 ---
 
 <section class="flex-col">
   <Nav />
-  <Carrusel content={images} />
+  <Carrusel content={images} btnTxt={btnTxt} slug={slug} />
 </section>
 
-<style>
+<!-- <style>
   .learn-more {
     background: linear-gradient(to right, #244663, #081016);
   }
@@ -70,4 +76,4 @@ const images = [
       margin-top: 2rem;
     }
   }
-</style>
+</style> -->

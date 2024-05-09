@@ -7,9 +7,11 @@ interface item {
 }
 export interface Props {
   content: item[];
+  btnTxt: string;
+  slug: string;
 }
 
-const { content } = Astro.props;
+const { content, btnTxt, slug } = Astro.props;
 ---
 
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
@@ -26,52 +28,42 @@ const { content } = Astro.props;
               alt={item.title}
             />
           </div>
-          <div class="absolute inset-0 bg-black opacity-15 z-20" />
+
+          {/* <div class="absolute inset-0 bg-black opacity-15 z-20" /> */}
+          <div class="absolute inset-0 z-20 bg-gradient-to-t from-slate-900 via-bg-slate-800 to-transparent" />
         </>
       ))
     }
   </div>
-  <!-- Contact -->
-  <button
-    type="button"
-    class="absolute rounded-full font-bold h-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-30 flex items-center justify-center px-4 cursor-pointer bg-secondary text-white hover:bg-secondary-dark"
+  <!-- Content over the carousel -->
+  <div
+    class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-30 flex flex-col items-center"
   >
-    CONTACT US
-  </button>
+    <button
+      type="button"
+      class="rounded-full font-bold h-10 flex items-center px-4 cursor-pointer bg-secondary text-white hover:bg-secondary-dark"
+    >
+      {btnTxt}
+    </button>
+    <br />
+    <p class="text-white italic tracking-wider text-center">{slug}</p>
+  </div>
+
   <!-- Slider indicators -->
   <div
     class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
   >
-    <button
-      type="button"
-      class="w-3 h-3 rounded-full"
-      aria-current="true"
-      aria-label="Slide 1"
-      data-carousel-slide-to="0"></button>
-    <button
-      type="button"
-      class="w-3 h-3 rounded-full"
-      aria-current="false"
-      aria-label="Slide 2"
-      data-carousel-slide-to="1"></button>
-    <button
-      type="button"
-      class="w-3 h-3 rounded-full"
-      aria-current="false"
-      aria-label="Slide 3"
-      data-carousel-slide-to="2"></button>
-    <button
-      type="button"
-      class="w-3 h-3 rounded-full"
-      aria-current="false"
-      aria-label="Slide 4"
-      data-carousel-slide-to="3"></button>
-    <button
-      type="button"
-      class="w-3 h-3 rounded-full"
-      aria-current="false"
-      aria-label="Slide 5"
-      data-carousel-slide-to="4"></button>
+    {
+      [0, 1, 2, 3].map((index) => (
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to={index}
+        />
+      ))
+    }
   </div>
   <!-- Slider controls -->
   <button
