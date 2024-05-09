@@ -39,14 +39,16 @@ const { content, btnTxt, slug } = Astro.props;
   <div
     class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-30 flex flex-col items-center"
   >
-    <button
-      type="button"
+    <a
+      href="#contact"
       class="rounded-full font-bold h-10 flex items-center px-4 cursor-pointer bg-secondary text-white hover:bg-secondary-dark"
     >
       {btnTxt}
-    </button>
+    </a>
     <br />
-    <p class="text-white italic tracking-wider text-center">{slug}</p>
+    <p class="hidden md:block text-white italic tracking-wider text-center">
+      {slug}
+    </p>
   </div>
 
   <!-- Slider indicators -->

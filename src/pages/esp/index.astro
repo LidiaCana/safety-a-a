@@ -29,12 +29,13 @@ import {
   SLUG,
   TESTIMONIALS_SUBTITLE,
   TESTIMONIALS_TITLE,
+  MENU,
 } from "../../translate/sp.astro";
 ---
 
 <BaseLayout title="Safety a&a">
   <Announcement />
-  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} />
+  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} navItems={MENU} />
   <section id="about-us" class="text-black mx-6 xl:mx-32 h-max pt-14">
     <AboutUs
       title={ABOUT_TITLE}

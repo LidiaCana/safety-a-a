@@ -57,12 +57,12 @@ const { items } = Astro.props;
 
   function prevSlide() {
     currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-    showSlide(currentSlide);
+    showSlide(currentSlide * 2.5);
   }
 
   function nextSlide() {
     currentSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-    showSlide(currentSlide);
+    showSlide(currentSlide * 2.5);
   }
   nextButton.addEventListener("click", () => {
     nextSlide();

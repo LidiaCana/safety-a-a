@@ -29,13 +29,13 @@ import {
   SLUG,
   TESTIMONIALS_SUBTITLE,
   TESTIMONIALS_TITLE,
+  MENU,
 } from "../../translate/en.astro";
 ---
 
 <BaseLayout title="Safety a&a">
-  <Announcement />
-  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} />
-  <section id="about-us" class="text-black mx-6 xl:mx-32 h-max pt-14">
+  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} navItems={MENU} />
+  <section id="about" class="text-black mx-6 xl:mx-32 h-max pt-14">
     <AboutUs
       title={ABOUT_TITLE}
       image="https://iili.io/JlTVDGa.jpg"
@@ -49,7 +49,7 @@ import {
   <section id="osha" class="text-black mx-6 xl:mx-32 h-max">
     <OSHA subTitle={OSHA_SUBTITLE} title={OSHA_TILTE} items={OSHA_COURSES_EN} />
   </section>
-  <section id="all">
+  <section id="courses">
     <AllCourse
       title={ALL_TITLE}
       subtitle={ALL_SUBTITLE}
@@ -68,7 +68,10 @@ import {
     />
   </section>
   <!-- <section id="contact" class="text-white h-max xl:h-screen"> -->
-  <section class="relative flex flex-wrap h-[80vh] lg:items-center">
+  <section
+    id="contact"
+    class="relative flex flex-wrap h-[80vh] lg:items-center"
+  >
     <ContactUs title={CONTACT_US_TITLE} subtitle={CONTACT_US_SUBTITLE} />
   </section>
   <Footer />
