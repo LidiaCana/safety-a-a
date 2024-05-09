@@ -1,6 +1,6 @@
 ---
-import type { Prop as CardProps } from "./course/Card.astro";
-import Carousel from "./CarouselCustom/Carousel.astro";
+import type { Prop as CardProps } from "./carouselCustom/CustomCard.astro";
+import CustomCarousel from "./carouselCustom/CustomCarousel.astro";
 
 interface Props {
   title: string;
@@ -17,4 +17,4 @@ const { title, subTitle, items } = Astro.props;
   {subTitle}
 </p>
 <br />
-<Carousel items={items} />
+<CustomCarousel items={items} />

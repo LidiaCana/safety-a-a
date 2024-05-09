@@ -1,5 +1,5 @@
 ---
-import Card, { type Prop as CardProps } from "./Card.astro";
+import CustomCard, { type Prop as CardProps } from "./CustomCard.astro";
 
 export interface Props {
   items: CardProps[];
@@ -13,7 +13,7 @@ const { items } = Astro.props;
     {
       items.map((item) => (
         <div class="w-[38%] flex-shrink-0 card-slide">
-          <Card {...item} />
+          <CustomCard {...item} />
         </div>
       ))
     }
