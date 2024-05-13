@@ -12,5 +12,5 @@ matrix:
             - code
             - pre
     sources:
-      - "**/*.md"
+      - "src/**/*.astro"
     default_encoding: utf-8
