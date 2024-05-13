@@ -1,39 +1,14 @@
-# name: Spellcheck Action
-# on: push
-
-# jobs:
-#   build:
-#     name: Spellcheck
-#     runs-on: ubuntu-latest
-#     steps:
-#       # The checkout step
-#       - uses: actions/checkout@v3
-#       - uses: rojopolis/spellcheck-github-actions@0.36.0
-#         name: Spellcheck
-#         with:
-#           path: src
-
-name: Spell Check
-
-on:
-  push:
-    branches:
-      - main
+name: Spellcheck Action
+on: push
 
 jobs:
-  spellcheck:
+  build:
+    name: Spellcheck
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Node.js and dependencies
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Run spell check
-        uses: github-spellcheck/github-spellcheck-action@v4
+      # The checkout step
+      - uses: actions/checkout@v3
+      - uses: rojopolis/spellcheck-github-actions@0.36.0
+        name: Spellcheck
         with:
           path: src
