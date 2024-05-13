@@ -1,7 +1,7 @@
 ---
 import Nav from "./Nav.astro";
 import Icon from "./Icon.astro";
-import Carrusel from "./Carousel.astro";
+import Carousel from "./Carousel.astro";
 
 interface Props {
   btnTxt: string;
@@ -37,7 +37,7 @@ const { btnTxt, slug, navItems } = Astro.props;
 <section class="flex-col">
   <Nav items={navItems} />
   <div id="banner" class="mt-[128px]">
-    <Carrusel content={images} btnTxt={btnTxt} slug={slug} />
+    <Carousel content={images} btnTxt={btnTxt} slug={slug} />
   </div>
 </section>
 

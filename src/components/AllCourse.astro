@@ -1,11 +1,11 @@
 ---
-import type { Props as BadgetProps } from "./Badget.astro";
-import Badget from "./Badget.astro";
+import type { Props as BadgeProps } from "./Badge.astro";
+import Badge from "./Badge.astro";
 
 interface Props {
   title: string;
   subtitle: string;
-  items: BadgetProps[];
+  items: BadgeProps[];
   buttonText: string;
 }
 const { title, subtitle, buttonText, items } = Astro.props;
@@ -35,7 +35,7 @@ const { title, subtitle, buttonText, items } = Astro.props;
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
       {
         items.map(({ title, subtitle1, subtitle2 }) => (
-          <Badget title={title} subtitle1={subtitle1} subtitle2={subtitle2} />
+          <Badge title={title} subtitle1={subtitle1} subtitle2={subtitle2} />
         ))
       }
     </div>
