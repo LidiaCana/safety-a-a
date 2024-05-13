@@ -3,8 +3,10 @@ import Icon from "./Icon.astro";
 interface Props {
   title: string;
   subtitle: string;
+  placeholder: string;
+  btnText: string;
 }
-const { title, subtitle } = Astro.props;
+const { title, subtitle, placeholder, btnText } = Astro.props;
 ---
 
 <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
@@ -28,7 +30,7 @@ const { title, subtitle } = Astro.props;
         name="message"
         class="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm p-4"
         rows="4"
-        placeholder="Enter any additional order notes..."></textarea>
+        placeholder={placeholder}></textarea>
     </div>
     <br />
     <div>
@@ -36,7 +38,7 @@ const { title, subtitle } = Astro.props;
         type="submit"
         class="w-full mt-6 inline-flex justify-center items-center gap-2 rounded-full border border-main px-5 py-3 text-main text-center transition hover:bg-main hover:text-white md:mt-0"
       >
-        Send
+        {btnText}
       </button>
     </div>
 

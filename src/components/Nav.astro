@@ -4,15 +4,17 @@ import Announcement from "./Announcement.astro";
 
 interface Props {
   items: { name: string; url: string }[];
+  announcementTitle: string;
+  announcementHighlight: string;
 }
-const { items } = Astro.props;
+const { items, announcementTitle, announcementHighlight } = Astro.props;
 ---
 
 <!--Navbar with flex tailwind-->
 <nav
   class="border-gray-200 px-10 sm:px-4 py-2.5 bg-slate-900 fixed top-0 w-full z-50"
 >
-  <Announcement />
+  <Announcement title={announcementTitle} highlight={announcementHighlight} />
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >

@@ -7,6 +7,8 @@ interface Props {
   btnTxt: string;
   slug: string;
   navItems: { name: string; url: string }[];
+  announcementTitle: string;
+  announcementHighlight: string;
 }
 
 const images = [
@@ -31,11 +33,16 @@ const images = [
     body: null,
   },
 ];
-const { btnTxt, slug, navItems } = Astro.props;
+const { btnTxt, slug, navItems, announcementTitle, announcementHighlight } =
+  Astro.props;
 ---
 
 <section class="flex-col">
-  <Nav items={navItems} />
+  <Nav
+    items={navItems}
+    announcementTitle={announcementTitle}
+    announcementHighlight={announcementHighlight}
+  />
   <div id="banner" class="mt-[128px]">
     <Carousel content={images} btnTxt={btnTxt} slug={slug} />
   </div>

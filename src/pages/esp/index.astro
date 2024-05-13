@@ -29,11 +29,24 @@ import {
   TESTIMONIALS_SUBTITLE,
   TESTIMONIALS_TITLE,
   MENU,
+  ANNOUNCEMENT_HIGHTLIGHT,
+  ANNOUNCEMENT_TITLE,
+  EMAIL,
+  PHONE,
+  ADDRESS,
+  PLACEHOLDER_TXT,
+  BTN_TEXT,
 } from "../../translate/sp.astro";
 ---
 
 <BaseLayout title="Safety a&a">
-  <Hero btnTxt={BTN_TXT_HERO} slug={SLUG} navItems={MENU} />
+  <Hero
+    btnTxt={BTN_TXT_HERO}
+    slug={SLUG}
+    navItems={MENU}
+    announcementHighlight={ANNOUNCEMENT_HIGHTLIGHT}
+    announcementTitle={ANNOUNCEMENT_TITLE}
+  />
   <section id="about" class="text-black mx-6 xl:mx-32 h-max pt-14">
     <AboutUs
       title={ABOUT_TITLE}
@@ -71,7 +84,12 @@ import {
     id="contact"
     class="relative flex flex-wrap h-[80vh] lg:items-center"
   >
-    <ContactUs title={CONTACT_US_TITLE} subtitle={CONTACT_US_SUBTITLE} />
+    <ContactUs
+      title={CONTACT_US_TITLE}
+      subtitle={CONTACT_US_SUBTITLE}
+      btnText={BTN_TEXT}
+      placeholder={PLACEHOLDER_TXT}
+    />
   </section>
-  <Footer />
+  <Footer email={EMAIL} phone={PHONE} address={ADDRESS} />
 </BaseLayout>
